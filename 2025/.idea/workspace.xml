@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7617257f-e157-4b92-b7a9-8e08f0d3f510" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day2.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day2_input" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/Day2Test.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Day1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Day1.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Log.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Log.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/Day1Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Day1Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +75,16 @@
     "Gradle.Day1Test.when rotating left and new position is above 0, find password returns 0.executor": "Run",
     "Gradle.Day1Test.when rotating left and new position is below 0, find password returns 1.executor": "Run",
     "Gradle.Day1Test.when rotating left and new position is below 100, find password returns 2.executor": "Run",
+    "Gradle.Day2Test.executor": "Run",
+    "Gradle.Day2Test.string increment happy path.executor": "Run",
+    "Gradle.Day2Test.string increment with trailing zeros.executor": "Run",
+    "Gradle.Day2Test.string increment.executor": "Run",
+    "Gradle.Day2Test.string range first.executor": "Run",
+    "Gradle.Day2Test.string range last.executor": "Run",
+    "Gradle.Day2Test.string range list.executor": "Run",
+    "Gradle.Day2Test.test string operator.executor": "Run",
+    "Gradle.Day2Test.testDay2Part2WithSample.executor": "Run",
+    "Gradle.Day2Test.testDay2WithSample.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -92,12 +103,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day1Test">
-    <configuration name="Day1Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Day2Test">
+    <configuration name="Day2Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -110,7 +124,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day1Test&quot;" />
+            <option value="&quot;Day2Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -121,7 +135,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day1Test.when rotating left and new position is 0, findPassword return 1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day2Test.string range list" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -134,7 +148,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day1Test.when rotating left and new position is 0, findPassword return 1&quot;" />
+            <option value="&quot;Day2Test.string range list&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -145,7 +159,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day1Test.when rotating left and new position is above 0, find password returns 0" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day2Test.testDay2Part2WithSample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,7 +172,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day1Test.when rotating left and new position is above 0, find password returns 0&quot;" />
+            <option value="&quot;Day2Test.testDay2Part2WithSample&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -169,7 +183,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day1Test.when rotating left and new position is below 0, find password returns 1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day2Test.testDay2WithSample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -182,7 +196,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day1Test.when rotating left and new position is below 0, find password returns 1&quot;" />
+            <option value="&quot;Day2Test.testDay2WithSample&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -193,37 +207,20 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day1Test.when rotating left and new position is below 100, find password returns 2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;Day1Test.when rotating left and new position is below 100, find password returns 2&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.overclockmp.MainKt" />
+      <module name="AdventOfCode2025.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day1Test" />
-        <item itemvalue="Gradle.Day1Test.when rotating left and new position is 0, findPassword return 1" />
-        <item itemvalue="Gradle.Day1Test.when rotating left and new position is below 100, find password returns 2" />
-        <item itemvalue="Gradle.Day1Test.when rotating left and new position is below 0, find password returns 1" />
-        <item itemvalue="Gradle.Day1Test.when rotating left and new position is above 0, find password returns 0" />
+        <item itemvalue="Gradle.Day2Test" />
+        <item itemvalue="Gradle.Day2Test.testDay2Part2WithSample" />
+        <item itemvalue="Gradle.Day2Test.string range list" />
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.Day2Test.testDay2WithSample" />
       </list>
     </recent_temporary>
   </component>

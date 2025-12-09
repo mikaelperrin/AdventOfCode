@@ -77,3 +77,15 @@ private fun ILogger.withTime(
 private fun ILogger.onlyIf(condition: Boolean): ILogger = { message ->
     if (condition) this(message)
 }
+
+context(log: Log)
+fun <T> Flow<T>.log(
+    prefix: String = "",
+    suffix: String = "",
+) = this.onEach {
+    log.d(buildString {
+        append(prefix)
+        append(" $it ")
+        append(suffix)
+    })
+}
