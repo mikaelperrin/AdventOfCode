@@ -10,7 +10,7 @@ class Day4Test {
     private val log = Log()
 
     @Test
-    fun `(part 1) test the number of accessible paper with sample data`() {
+    fun `(part 1) test the number of accessible paper with sample data`() = runTest {
         val actualAccessiblePaper = with(log) {
             findNumberOfAccessiblePaper(SAMPLE_INPUT)
         }
@@ -27,7 +27,7 @@ class Day4Test {
     }
 
     @Test
-    fun `(part 2) test the number of accessible paper with sample data`() {
+    fun `(part 2) test the number of accessible paper with sample data`() = runTest {
         val actualAccessiblePaper = with(log) {
             findNumberOfAccessiblePaper(SAMPLE_INPUT, keepGoing = true)
         }
