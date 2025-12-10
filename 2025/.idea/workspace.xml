@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7617257f-e157-4b92-b7a9-8e08f0d3f510" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/Day1Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Day1Test.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/Day2Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Day2Test.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day4.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day4_input" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/Day4Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Log.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Log.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +93,11 @@
     "Gradle.Day3Test.testFindHighestOutputJoltagePart2WithRealInput.executor": "Run",
     "Gradle.Day3Test.testFindHighestOutputJoltagePart2WithSample.executor": "Run",
     "Gradle.Day3Test.testFindHighestOutputJoltageWithRealInput.executor": "Run",
+    "Gradle.Day4Test.(part 1) test the number of accessible paper with real data.executor": "Run",
+    "Gradle.Day4Test.(part 1) test the number of accessible paper with sample data.executor": "Run",
+    "Gradle.Day4Test.(part 2) test the number of accessible paper with real data.executor": "Run",
+    "Gradle.Day4Test.(part 2) test the number of accessible paper with sample data.executor": "Run",
+    "Gradle.Day4Test.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -114,8 +123,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day2Test">
-    <configuration name="Day2Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="Day4Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -128,7 +137,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day2Test&quot;" />
+            <option value="&quot;Day4Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -139,7 +148,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day3Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day4Test.(part 1) test the number of accessible paper with real data" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -152,7 +161,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day3Test&quot;" />
+            <option value="&quot;Day4Test.(part 1) test the number of accessible paper with real data&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -163,7 +172,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day3Test.(part 2) test finding the max joltage for one battery bank" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day4Test.(part 2) test the number of accessible paper with real data" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -176,7 +185,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day3Test.(part 2) test finding the max joltage for one battery bank&quot;" />
+            <option value="&quot;Day4Test.(part 2) test the number of accessible paper with real data&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,7 +196,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day3Test.testFindHighestOutputJoltagePart2WithSample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day4Test.(part 2) test the number of accessible paper with sample data" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -200,7 +209,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day3Test.testFindHighestOutputJoltagePart2WithSample&quot;" />
+            <option value="&quot;Day4Test.(part 2) test the number of accessible paper with sample data&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -220,11 +229,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day2Test" />
-        <item itemvalue="Gradle.Day3Test" />
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Gradle.Day3Test.(part 2) test finding the max joltage for one battery bank" />
-        <item itemvalue="Gradle.Day3Test.testFindHighestOutputJoltagePart2WithSample" />
+        <item itemvalue="Gradle.Day4Test" />
+        <item itemvalue="Gradle.Day4Test.(part 2) test the number of accessible paper with real data" />
+        <item itemvalue="Gradle.Day4Test.(part 2) test the number of accessible paper with sample data" />
+        <item itemvalue="Gradle.Day4Test.(part 1) test the number of accessible paper with real data" />
       </list>
     </recent_temporary>
   </component>

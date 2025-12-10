@@ -2,6 +2,7 @@ package io.overclockmp
 
 import io.overclockmp.Day2.addAllInvalidIds
 import io.overclockmp.Day3.findHighestOutputJoltage
+import io.overclockmp.Day4.findNumberOfAccessiblePaper
 
 
 suspend fun day1() {
@@ -15,6 +16,7 @@ suspend fun day1() {
     log.i("====Part 2 - with 0x434C49434B method====")
     val passwordPart2 = Day1.findPassword(lines)
     log.i("\tPassword: $passwordPart2\n")
+    println()
 }
 
 suspend fun day2() {
@@ -32,6 +34,7 @@ suspend fun day2() {
         addAllInvalidIds(input, supportNDuplicates = true)
     }
     log.i("\tSum of Invalid Ids = $result2\n")
+    println()
 }
 
 suspend fun day3() {
@@ -49,6 +52,24 @@ suspend fun day3() {
         findHighestOutputJoltage(lines, batteryCount = 12)
     }
     log.i("\tHighest Joltage = $highestJoltage2")
+    println()
+}
+
+suspend fun day4() {
+    val log = Log()
+    log.i("Day 4 - Printing Department")
+    log.i("====Part 1====")
+    val lines = getFileContent("day4_input")
+    val actualAccessiblePaper = with(log) {
+        findNumberOfAccessiblePaper(lines)
+    }
+    log.i("\tNumber of accessible paper = $actualAccessiblePaper")
+    log.i("====Part 2====")
+    val actualAccessiblePaper2 = with(log) {
+        findNumberOfAccessiblePaper(lines, keepGoing = true)
+    }
+    log.i("\tNumber of accessible paper with multiple iteration = $actualAccessiblePaper2")
+    println()
 }
 
 
@@ -56,4 +77,5 @@ suspend fun main() {
     day1()
     day2()
     day3()
+    day4()
 }
