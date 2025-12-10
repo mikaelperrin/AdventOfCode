@@ -11,7 +11,7 @@ class Day2Test {
     private val log = Log()
 
     @Test
-    fun testDay2Part1WithSample() = runTest {
+    fun `(part 1) test sum of all invalid ids with sample`() = runTest {
         val idsSum = with(log) {
             addAllInvalidIds(SAMPLE_INPUT)
         }
@@ -19,7 +19,7 @@ class Day2Test {
     }
 
     @Test
-    fun testDay2Part1RealInput() = runTest {
+    fun `(part 1) test sum of all invalid ids with real data`() = runTest {
         val input = getFileContent("day2_input").first()
         val result = with(log) {
             addAllInvalidIds(input)
@@ -28,7 +28,7 @@ class Day2Test {
     }
 
     @Test
-    fun testDay2Part2WithSample() = runTest {
+    fun `(part 2) test sum of all invalid ids with sample`() = runTest {
         val idsSum = with(log) {
             addAllInvalidIds(SAMPLE_INPUT_PART2, supportNDuplicates = true)
         }
@@ -36,7 +36,7 @@ class Day2Test {
     }
 
     @Test
-    fun testDay2Part2RealInput() = runTest {
+    fun `(part 2) test sum of all invalid ids with real data`() = runTest {
         val input = getFileContent("day2_input").first()
         val result = with(log) {
             addAllInvalidIds(input, supportNDuplicates = true)

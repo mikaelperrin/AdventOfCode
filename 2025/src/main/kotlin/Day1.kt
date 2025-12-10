@@ -43,7 +43,7 @@ data class DialState(val position: Int, val zeroPassCountForRotation: Int = 0)
 object Day1 {
     private val log = Log()
     suspend fun findPassword(
-        rotations: Array<String>,
+        rotations: List<String>,
         initialDialPosition: Int = 50,
         use0x434C49434BMethod: Boolean = true,
     ): Int {

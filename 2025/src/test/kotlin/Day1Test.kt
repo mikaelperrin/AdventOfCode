@@ -11,82 +11,82 @@ class Day1Test {
 
     @Test
     fun `when rotating left and new position is 0, findPassword return 1`() = runTest {
-        val password = findPassword(arrayOf("L50"), initialDialPosition = 50)
+        val password = findPassword(listOf("L50"), initialDialPosition = 50)
         assertEquals(expected = 1, actual = password)
     }
 
     @Test
     fun `when rotating right and new position is 0, findPassword return 1`() = runTest {
-        val password = findPassword(arrayOf("R50"), initialDialPosition = 50)
+        val password = findPassword(listOf("R50"), initialDialPosition = 50)
         assertEquals(expected = 1, actual = password)
     }
 
     @Test
     fun `when rotating left and new position is above 0, find password returns 0`() = runTest {
-        val password = findPassword(arrayOf("L10"), initialDialPosition = 50)
+        val password = findPassword(listOf("L10"), initialDialPosition = 50)
         assertEquals(expected = 0, actual = password)
     }
 
     @Test
     fun `when rotating left and new position is below 0, find password returns 1`() = runTest {
-        val password = findPassword(arrayOf("L60"), initialDialPosition = 50)
+        val password = findPassword(listOf("L60"), initialDialPosition = 50)
         assertEquals(expected = 1, actual = password)
     }
 
     @Test
     fun `when rotating left and new position is below 100, find password returns 2`() = runTest {
-        val password = findPassword(arrayOf("L160"), initialDialPosition = 50)
+        val password = findPassword(listOf("L160"), initialDialPosition = 50)
         assertEquals(expected = 2, actual = password)
     }
 
     @Test
     fun `when rotating right and new position is below 100, find password returns 0`() = runTest {
-        val password = findPassword(arrayOf("R10"), initialDialPosition = 50)
+        val password = findPassword(listOf("R10"), initialDialPosition = 50)
         assertEquals(expected = 0, actual = password)
     }
 
     @Test
     fun `when rotating right and new position is above 100, find password returns 1`() = runTest {
-        val password = findPassword(arrayOf("R60"), initialDialPosition = 50)
+        val password = findPassword(listOf("R60"), initialDialPosition = 50)
         assertEquals(expected = 1, actual = password)
     }
 
     @Test
     fun `when rotating right and new position is above 200, find password returns 2`() = runTest {
-        val password = findPassword(arrayOf("R160"), initialDialPosition = 50)
+        val password = findPassword(listOf("R160"), initialDialPosition = 50)
         assertEquals(expected = 2, actual = password)
     }
 
     @Test
-    fun findPasswordPart1WithSample() = runTest {
+    fun `(part 1) test findPassword with sample`() = runTest {
         val password = findPassword(SAMPLE_ROTATIONS, use0x434C49434BMethod = false)
         assertEquals(expected = 3, actual = password)
     }
 
     @Test
-    fun findPasswordPart1WithRealInput() = runTest {
+    fun `(part 1) test findPassword with real input`() = runTest {
         val lines = getFileContent("day1_input")
-        val password = findPassword(lines.toTypedArray(), use0x434C49434BMethod = false)
+        val password = findPassword(lines, use0x434C49434BMethod = false)
         assertEquals(expected = 1100, actual = password)
     }
 
     @Test
-    fun findPasswordPart2WithSample() = runTest {
+    fun `(part 2) test findPassword with sample`() = runTest {
         val password = findPassword(SAMPLE_ROTATIONS)
         assertEquals(expected = 6, actual = password)
     }
 
     @Test
-    fun findPasswordPart2WithRealInput() = runTest {
+    fun `(part 2) test findPassword with real input`() = runTest {
         val lines = getFileContent("day1_input")
         val password = context(log) {
-            findPassword(lines.toTypedArray())
+            findPassword(lines)
         }
         assertEquals(expected = 6358, actual = password)
     }
 
     private companion object {
-        val SAMPLE_ROTATIONS = arrayOf(
+        val SAMPLE_ROTATIONS = listOf(
             "L68",
             "L30",
             "R48",

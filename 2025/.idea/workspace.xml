@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7617257f-e157-4b92-b7a9-8e08f0d3f510" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Day2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day2_input" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/Day2Test.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Log.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Log.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/Day1Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Day1Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/Day2Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Day2Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
-        <option value="Kotlin JUnit5 Test Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -85,6 +81,14 @@
     "Gradle.Day2Test.test string operator.executor": "Run",
     "Gradle.Day2Test.testDay2Part2WithSample.executor": "Run",
     "Gradle.Day2Test.testDay2WithSample.executor": "Run",
+    "Gradle.Day3Test.(part 1) test finding the max joltage for one battery bank.executor": "Run",
+    "Gradle.Day3Test.(part 2) test finding the max joltage for one battery bank.executor": "Run",
+    "Gradle.Day3Test.executor": "Run",
+    "Gradle.Day3Test.testFindHighestOutputJoltage.executor": "Run",
+    "Gradle.Day3Test.testFindHighestOutputJoltagePart1WithSample.executor": "Run",
+    "Gradle.Day3Test.testFindHighestOutputJoltagePart2WithRealInput.executor": "Run",
+    "Gradle.Day3Test.testFindHighestOutputJoltagePart2WithSample.executor": "Run",
+    "Gradle.Day3Test.testFindHighestOutputJoltageWithRealInput.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -135,7 +139,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day2Test.string range list" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day3Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -148,7 +152,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day2Test.string range list&quot;" />
+            <option value="&quot;Day3Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,7 +163,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day2Test.testDay2Part2WithSample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day3Test.(part 2) test finding the max joltage for one battery bank" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,7 +176,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day2Test.testDay2Part2WithSample&quot;" />
+            <option value="&quot;Day3Test.(part 2) test finding the max joltage for one battery bank&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,7 +187,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day2Test.testDay2WithSample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day3Test.testFindHighestOutputJoltagePart2WithSample" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -196,7 +200,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Day2Test.testDay2WithSample&quot;" />
+            <option value="&quot;Day3Test.testFindHighestOutputJoltagePart2WithSample&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,10 +221,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Day2Test" />
-        <item itemvalue="Gradle.Day2Test.testDay2Part2WithSample" />
-        <item itemvalue="Gradle.Day2Test.string range list" />
+        <item itemvalue="Gradle.Day3Test" />
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Gradle.Day2Test.testDay2WithSample" />
+        <item itemvalue="Gradle.Day3Test.(part 2) test finding the max joltage for one battery bank" />
+        <item itemvalue="Gradle.Day3Test.testFindHighestOutputJoltagePart2WithSample" />
       </list>
     </recent_temporary>
   </component>
