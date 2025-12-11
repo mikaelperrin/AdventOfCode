@@ -36,95 +36,29 @@ object Day5 {
     context(log: Log)
     fun findAllFreshProductIDs(ranges: List<String>): Long {
 
-        // read and merge all the ranges that can be merged so that there is no intersection to avoid duplicates
-        val mergedRanges = sortedSetOf<LongRange>(Comparator { r1, r2 -> r1.first.compareTo(r2.first) })
-        for(stringRange in ranges) {
+        val parsedRanges = ranges.map { stringRange ->
             val parts = stringRange.split('-')
-            val range = LongRange(parts[0].toLong(), parts[1].toLong())
-            mergedRanges.addAndMerge(range)
-        }
+            LongRange(parts[0].toLong(), parts[1].toLong())
+        }.sortedBy { it.first }
 
-        log.d("MergedRanges: $this")
+        val mergedRanges = mutableListOf<LongRange>()
+        var current = parsedRanges[0]
 
-        // count each range by diffing
-        return mergedRanges.sumOf { it.last - it.first + 1 }
-    }
-
-    context(log: Log)
-    private fun SortedSet<LongRange>.addAndMerge(range: LongRange) {
-
-        var inserted = false
-
-        //insert new range
-        for(recordedRange in this) {
-            if(recordedRange.intersectsWith(range)) {
-                val newRange = recordedRange.mergeWith(range)
-                this.remove(recordedRange)
-                this.add(newRange)
-                inserted = true
-                break
-            }
-        }
-
-        if(!inserted) {
-            this.add(range)
-            return
-        }
-
-        val list = this.toMutableList()
-        val mergedList = mutableListOf<LongRange>()
-
-        var i = 0
-        while(i < list.size) {
-            if(i+1 < list.size && list[i].intersectsWith(list[i+1])) {
-                mergedList.add(list[i].mergeWith(list[i+1]))
-                i += 2
+        for (i in 1 until parsedRanges.size) {
+            val next = parsedRanges[i]
+            log.d("Current Range: $current | Next Range: $next")
+            if (current.last >= next.first - 1) {
+                log.d("Found collision between $current and $next")
+                current = LongRange(current.first, maxOf(current.last, next.last))
             } else {
-                mergedList.add(list[i])
-                ++i
+                mergedRanges.add(current)
+                current = next
             }
+            log.d("Current Merged Ranges: $mergedRanges")
         }
-        this.clear()
-        this.addAll(mergedList)
-    }
+        mergedRanges.add(current)
+        log.d("Merged Ranges: $mergedRanges")
 
-    context(log: Log)
-    private fun LongRange.intersectsWith(other: LongRange) : Boolean {
-        if(this.first > other.last || this.last < other.first) {
-            log.d("Intersection: there is no intersection between $this and $other")
-            return false
-        }
-        if(this.first >= other.first && this.last <= other.last) {
-            log.d("Intersection: $$this is contained in $other")
-            return true
-        }
-
-        if(this.first <= other.first && this.last >= other.last) {
-            log.d("Intersection: $other is contained in $this")
-            return true
-        }
-
-        return if(this.last > other.first && this.last < other.last) {
-            log.d("Intersection: end of $this overlaps with beginning of $other")
-            true
-        } else {
-            log.d("Intersection: beginning of $this overlaps with end of $other")
-            true
-        }
-    }
-
-    // assumes ranges collide already
-    private fun LongRange.mergeWith(other: LongRange): LongRange {
-        val newStart = if(this.first < other.first) {
-            this.first
-        } else {
-            other.first
-        }
-        val newEnd = if(this.last > other.last) {
-            this.last
-        } else {
-            other.last
-        }
-        return LongRange(newStart, newEnd)
+        return mergedRanges.sumOf { it.last - it.first + 1 }
     }
 }
