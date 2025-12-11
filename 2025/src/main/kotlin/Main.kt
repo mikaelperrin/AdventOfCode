@@ -3,6 +3,8 @@ package io.overclockmp
 import io.overclockmp.Day2.addAllInvalidIds
 import io.overclockmp.Day3.findHighestOutputJoltage
 import io.overclockmp.Day4.findNumberOfAccessiblePaper
+import io.overclockmp.Day5.findAllFreshProductIDs
+import io.overclockmp.Day5.findNumberOfFreshProductsFromInventory
 
 
 suspend fun day1() {
@@ -72,10 +74,29 @@ suspend fun day4() {
     println()
 }
 
+suspend fun day5() {
+    val log = Log()
+    log.i("Day 5 - Cafeteria")
+    log.i("====Part 1====")
+    val lines = getFileContent("day5_input")
+    val separatorLineIndex = lines.indexOfFirst{ it.isEmpty() }
+    val ranges = lines.take(separatorLineIndex)
+    val productIDs = lines.drop(separatorLineIndex + 1)
+    val numberOfFreshProductsFromInventory = with(log) {
+        findNumberOfFreshProductsFromInventory(ranges, productIDs)
+    }
+    log.i("Number of Fresh Products found in inventory: $numberOfFreshProductsFromInventory")
+    log.i("====Part 2====")
+    val allFreshProductIDSCount = with(log) {
+        findAllFreshProductIDs(ranges)
+    }
+    log.i("Total number of Fresh Products:  $allFreshProductIDSCount")
+}
 
 suspend fun main() {
     day1()
     day2()
     day3()
     day4()
+    day5()
 }
