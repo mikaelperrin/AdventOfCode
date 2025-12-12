@@ -5,6 +5,8 @@ import io.overclockmp.Day3.findHighestOutputJoltage
 import io.overclockmp.Day4.findNumberOfAccessiblePaper
 import io.overclockmp.Day5.findAllFreshProductIDs
 import io.overclockmp.Day5.findNumberOfFreshProductsFromInventory
+import io.overclockmp.Day6.solveProblemsPart1
+import io.overclockmp.Day6.solveProblemsPart2
 
 
 suspend fun day1() {
@@ -92,6 +94,17 @@ suspend fun day5() {
     }
     log.i("Total number of Fresh Products:  $allFreshProductIDSCount")
 }
+suspend fun day6() {
+    val log = Log()
+    log.i("Day 6 - Trash Compactor")
+    log.i("====Part 1====")
+    val lines = getFileContent("day6_input")
+    val mathResult = solveProblemsPart1(lines)
+    log.i("Operation by Line: $mathResult")
+    log.i("====Part 2====")
+    val mathResult2 = solveProblemsPart2(lines)
+    log.i("Cephalopod Math Result: $mathResult2")
+}
 
 suspend fun main() {
     day1()
@@ -99,4 +112,5 @@ suspend fun main() {
     day3()
     day4()
     day5()
+    day6()
 }
