@@ -7,6 +7,8 @@ import io.overclockmp.Day5.findAllFreshProductIDs
 import io.overclockmp.Day5.findNumberOfFreshProductsFromInventory
 import io.overclockmp.Day6.solveProblemsPart1
 import io.overclockmp.Day6.solveProblemsPart2
+import io.overclockmp.Day7.runTeleporterTachyonBeam
+import io.overclockmp.Day7.runTeleporterTachyonBeamPart2
 
 
 suspend fun day1() {
@@ -106,6 +108,22 @@ suspend fun day6() {
     log.i("Cephalopod Math Result: $mathResult2")
 }
 
+suspend fun day7() {
+    val log = Log()
+    log.i("Day 7 - Laboratories")
+    log.i("====Part 1====")
+    val lines = getFileContent("day7_input")
+    val numberOfSplit = with(log) {
+        runTeleporterTachyonBeam(lines)
+    }
+    log.i("Number of splits: $numberOfSplit")
+    log.i("====Part 2====")
+    val numberOfTimelines = with(log) {
+        runTeleporterTachyonBeamPart2(lines)
+    }
+    log.i("Number of timelines: $numberOfTimelines")
+}
+
 suspend fun main() {
     day1()
     day2()
@@ -113,4 +131,5 @@ suspend fun main() {
     day4()
     day5()
     day6()
+    day7()
 }
