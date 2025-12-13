@@ -2,14 +2,11 @@
 
 package io.overclockmp
 
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.toSet
-import kotlin.math.pow
 import kotlin.math.sqrt
 
 data class Box(
@@ -17,21 +14,21 @@ data class Box(
     val y: Int,
     val z: Int
 ) {
-    fun distanceWith(other: Box) : Double {
-        return sqrt((x-other.x).pow(2) + (y - other.y).pow(2) + (z - other.z).pow(2))
+    fun squaredDistanceWith(other: Box): Long {
+        val dx = (x - other.x).toLong()
+        val dy = (y - other.y).toLong()
+        val dz = (z - other.z).toLong()
+        return (dx * dx + dy * dy + dz * dz)
     }
-
-    fun connectTo(other: Box): Circuit {
-        return Circuit(this).apply {
-            connectTo(other)
-        }
+    fun distanceWith(other: Box) : Double {
+        return sqrt(squaredDistanceWith(other).toDouble())
     }
 }
 
 data class Connection(
     val origin: Box,
     val destination: Box,
-    val distance: Double
+    val distance: Long
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -55,15 +52,6 @@ data class Connection(
 class Circuit(origin: Box) {
     internal val junctionBoxes = mutableSetOf(origin)
 
-    fun connectTo(junctionBox: Box): Circuit {
-        if (junctionBox in junctionBoxes) {
-            throw IllegalArgumentException("trying to add a junction box $junctionBox " +
-                    "to a circuit that already contains it: $this")
-        }
-        junctionBoxes.add(junctionBox)
-        return this
-    }
-
     fun connectTo(other: Circuit): Circuit {
         junctionBoxes.addAll(other.junctionBoxes)
         return this
@@ -74,28 +62,6 @@ class Circuit(origin: Box) {
     }
 
     fun size(): Int = junctionBoxes.size
-
-    override fun toString(): String {
-        return "Circuit(junctionBoxes=\n\t${junctionBoxes.joinToString("\n\t")}\n)"
-    }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Circuit
-
-        return junctionBoxes == other.junctionBoxes
-    }
-
-    override fun hashCode(): Int {
-        return junctionBoxes.hashCode()
-    }
-}
-
-
-private fun Int.pow(n: Int): Double {
-    return this.toDouble().pow(n)
 }
 
 object Day8 {
@@ -163,17 +129,16 @@ object Day8 {
 }
 
 private suspend fun List<Box>.createSortedListOfPossibleConnections(): List<Connection> {
-    return this.asFlow()
-        .flatMapMerge { origin ->
-            flow {
-                for (destination in this@createSortedListOfPossibleConnections) {
-                    if (destination == origin) continue
-                    val distance = origin.distanceWith(destination)
-                    emit(Connection(origin, destination, distance))
-                }
-            }.flowOn(Dispatchers.Default)
-        }.toSet()
-        .sortedBy { (_, _, distance) ->
-            distance
+
+    val connectionSet = sortedSetOf<Connection>(Comparator { c1, c2 -> c1.distance.compareTo(c2.distance) })
+
+    for((i, origin) in this.withIndex()) {
+        for(j in i+1..this.lastIndex) {
+            val destination = this@createSortedListOfPossibleConnections[j]
+            val distance = origin.squaredDistanceWith(destination)
+            connectionSet.add(Connection(origin, destination, distance))
         }
+    }
+
+    return connectionSet.toList()
 }
