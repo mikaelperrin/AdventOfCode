@@ -9,6 +9,7 @@ import io.overclockmp.Day6.solveProblemsPart1
 import io.overclockmp.Day6.solveProblemsPart2
 import io.overclockmp.Day7.runTeleporterTachyonBeam
 import io.overclockmp.Day7.runTeleporterTachyonBeamPart2
+import io.overclockmp.Day8.connectJunctionBoxes
 
 
 suspend fun day1() {
@@ -50,7 +51,7 @@ suspend fun day3() {
     log.i("====Part 1====")
     val lines = getFileContent("day3_input")
     val highestJoltage = with(log) {
-         findHighestOutputJoltage(lines)
+        findHighestOutputJoltage(lines)
     }
     log.i("\tHighest Joltage = $highestJoltage")
     log.i("====Part 2====")
@@ -83,7 +84,7 @@ suspend fun day5() {
     log.i("Day 5 - Cafeteria")
     log.i("====Part 1====")
     val lines = getFileContent("day5_input")
-    val separatorLineIndex = lines.indexOfFirst{ it.isEmpty() }
+    val separatorLineIndex = lines.indexOfFirst { it.isEmpty() }
     val ranges = lines.take(separatorLineIndex)
     val productIDs = lines.drop(separatorLineIndex + 1)
     val numberOfFreshProductsFromInventory = with(log) {
@@ -96,6 +97,7 @@ suspend fun day5() {
     }
     log.i("Total number of Fresh Products:  $allFreshProductIDSCount")
 }
+
 suspend fun day6() {
     val log = Log()
     log.i("Day 6 - Trash Compactor")
@@ -122,6 +124,22 @@ suspend fun day7() {
         runTeleporterTachyonBeamPart2(lines)
     }
     log.i("Number of timelines: $numberOfTimelines")
+}
+
+suspend fun day8() {
+    val log = Log()
+    log.i("Day 8 - Playground")
+    log.i("====Part 1====")
+    val lines = getFileContent("day8_input")
+    val result = with(log) {
+        connectJunctionBoxes(lines, 1000)
+    }
+    log.i("Result Part 1: $result")
+    log.i("====Part 2====")
+    val result2 = with(log) {
+        connectJunctionBoxes(lines)
+    }
+    log.i("Result Part 1: $result2")
 }
 
 suspend fun main() {
