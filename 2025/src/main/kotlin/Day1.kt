@@ -15,7 +15,7 @@ enum class Direction(val encodedDirection: Char, val sign: Short) {
     companion object {
         fun decode(encodedDirection: Char): Direction {
             entries.forEach {
-                if ( encodedDirection == it.encodedDirection ) {
+                if (encodedDirection == it.encodedDirection) {
                     return it
                 }
             }
@@ -78,5 +78,5 @@ object Day1 {
         return dialState.copy(position = newPosition, zeroPassCountForRotation = zeroPassCount)
     }
 
-    private fun Boolean.toInt() = if(this) 1 else 0
+    private fun Boolean.toInt() = if (this) 1 else 0
 }

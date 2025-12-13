@@ -1,7 +1,5 @@
-import io.overclockmp.Day6
 import io.overclockmp.Day6.solveProblemsPart1
 import io.overclockmp.Day6.solveProblemsPart2
-import io.overclockmp.Log
 import io.overclockmp.getFileContent
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test

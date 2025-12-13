@@ -38,7 +38,7 @@ object Day3 {
 
             for (maxIndex in 0 until batteryCount) {
                 val lastIndexWhereThereIsEnoughSpaceToPutRemainingValues = thresholdForFullNumberInsertion + maxIndex
-                if(joltage > max[maxIndex] && index <= lastIndexWhereThereIsEnoughSpaceToPutRemainingValues) {
+                if (joltage > max[maxIndex] && index <= lastIndexWhereThereIsEnoughSpaceToPutRemainingValues) {
                     max[maxIndex] = joltage
                     max.fill(0, maxIndex + 1, batteryCount)
                     break

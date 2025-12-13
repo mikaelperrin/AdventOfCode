@@ -1,4 +1,3 @@
-import io.overclockmp.Day7
 import io.overclockmp.Day7.runTeleporterTachyonBeam
 import io.overclockmp.Day7.runTeleporterTachyonBeamPart2
 import io.overclockmp.Log

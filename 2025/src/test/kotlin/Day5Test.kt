@@ -1,4 +1,3 @@
-import io.overclockmp.Day5
 import io.overclockmp.Day5.findAllFreshProductIDs
 import io.overclockmp.Day5.findNumberOfFreshProductsFromInventory
 import io.overclockmp.Log

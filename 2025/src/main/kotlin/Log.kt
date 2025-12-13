@@ -47,11 +47,11 @@ private fun baseLogger(): ILogger = { message ->
 
 private fun ILogger.withLogLevelFormat(logLevel: LogLevel): ILogger = { message ->
     val formattedMessage = buildString {
-        if(logLevel == LogLevel.ERROR) {
+        if (logLevel == LogLevel.ERROR) {
             append(RED)
         }
         append("${logLevel.levelTag}$message")
-        if(logLevel == LogLevel.ERROR) {
+        if (logLevel == LogLevel.ERROR) {
             append(RESET)
         }
     }

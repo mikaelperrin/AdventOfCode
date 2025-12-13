@@ -20,7 +20,8 @@ data class Box(
         val dz = (z - other.z).toLong()
         return (dx * dx + dy * dy + dz * dz)
     }
-    fun distanceWith(other: Box) : Double {
+
+    fun distanceWith(other: Box): Double {
         return sqrt(squaredDistanceWith(other).toDouble())
     }
 }
@@ -57,7 +58,7 @@ class Circuit(origin: Box) {
         return this
     }
 
-    fun contains(junctionBox: Box) : Boolean {
+    fun contains(junctionBox: Box): Boolean {
         return junctionBoxes.contains(junctionBox)
     }
 
@@ -66,8 +67,8 @@ class Circuit(origin: Box) {
 
 object Day8 {
     context(log: Log)
-    suspend fun connectJunctionBoxes(lines: List<String>, maxNumberOfConnections: Int = 0): Long {
-        val junctionBoxes = lines.map {line ->
+    fun connectJunctionBoxes(lines: List<String>, maxNumberOfConnections: Int = 0): Long {
+        val junctionBoxes = lines.map { line ->
             val parts = line.split(",\\s?".toRegex()).map { it.toInt() }
             Box(parts[0], parts[1], parts[2])
         }
@@ -96,7 +97,7 @@ object Day8 {
                 circuitList.remove(it)
             } ?: Circuit(destination)
 
-            if(originCircuit == destinationCircuit) {
+            if (originCircuit == destinationCircuit) {
                 continue
             }
 
@@ -104,9 +105,10 @@ object Day8 {
 
             circuitList.add(newCircuit)
 
-            if(lookingForNumberOfConnectionThatFormsASingleGroup
+            if (lookingForNumberOfConnectionThatFormsASingleGroup
                 && circuitList.size == 1
-                && junctionBoxes.size == circuitList.first().size()) {
+                && junctionBoxes.size == circuitList.first().size()
+            ) {
                 resultConnection = connection
                 break
             }
@@ -115,7 +117,7 @@ object Day8 {
         log.d("Final Circuit set: ${circuitList.sortedByDescending { it.size() }.joinToString()}")
 
         return if (lookingForNumberOfConnectionThatFormsASingleGroup) {
-            if(resultConnection != null) {
+            if (resultConnection != null) {
                 1L * resultConnection.origin.x * resultConnection.destination.x
             } else {
                 0
@@ -128,8 +130,7 @@ object Day8 {
     }
 }
 
-private suspend fun List<Box>.createSortedListOfPossibleConnections(): List<Connection> {
-
+private fun List<Box>.createSortedListOfPossibleConnections(): List<Connection> {
     val connectionSet = sortedSetOf<Connection>(Comparator { c1, c2 -> c1.distance.compareTo(c2.distance) })
 
     for((i, origin) in this.withIndex()) {

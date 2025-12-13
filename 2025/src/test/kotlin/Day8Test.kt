@@ -10,7 +10,7 @@ class Day8Test {
     private val log = Log()
 
     @Test
-    fun `(part 1) test with sample input`() = runTest {
+    fun `(part 1) test with sample input`() {
         val result = with(log) {
             connectJunctionBoxes(SAMPLE_INPUT, 10)
         }
@@ -27,7 +27,7 @@ class Day8Test {
     }
 
     @Test
-    fun `(part 2) test with sample input`() = runTest {
+    fun `(part 2) test with sample input`() {
         val result = with(log) {
             connectJunctionBoxes(SAMPLE_INPUT)
         }

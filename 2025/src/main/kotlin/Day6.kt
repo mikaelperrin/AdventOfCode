@@ -11,7 +11,7 @@ object Day6 {
         val resultTable = LongArray(symbols.size)
         val initialized = BooleanArray(symbols.size) { false }
 
-        for (i in 0 until problemLines.size-1) {
+        for (i in 0 until problemLines.size - 1) {
             val parts = problemLines[i].trim().split("\\s+".toRegex())
 
             parts.forEachIndexed { index, number ->
@@ -25,9 +25,11 @@ object Day6 {
                         '+' -> {
                             resultTable[index] + numberValue
                         }
+
                         '*' -> {
                             resultTable[index] * numberValue
                         }
+
                         else -> throw UnsupportedOperationException("What is this symbol now? $symbol")
                     }
                 }
@@ -50,7 +52,7 @@ object Day6 {
         val numbers = mutableListOf<Long>()
         var symbolIndex = symbols.lastIndex
 
-        for(column in lineSize-1 downTo 0) {
+        for (column in lineSize - 1 downTo 0) {
             var number = 0L
             for (lineIndex in 0..<problemLines.lastIndex) {
                 val digitOrEmpty = problemLines[lineIndex][column]
@@ -68,9 +70,11 @@ object Day6 {
                     '+' -> {
                         numbers.sum()
                     }
+
                     '*' -> {
                         numbers.fold(1L) { acc, n -> acc * n }
                     }
+
                     else -> throw UnsupportedOperationException("What is this symbol now? $symbol")
                 }
                 results.add(result)

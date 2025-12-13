@@ -18,7 +18,7 @@ class Day4Test {
     }
 
     @Test
-    fun `(part 1) test the number of accessible paper with real data`() = runTest{
+    fun `(part 1) test the number of accessible paper with real data`() = runTest {
         val lines = getFileContent("day4_input")
         val actualAccessiblePaper = with(log) {
             findNumberOfAccessiblePaper(lines)
@@ -35,7 +35,7 @@ class Day4Test {
     }
 
     @Test
-    fun `(part 2) test the number of accessible paper with real data`() = runTest{
+    fun `(part 2) test the number of accessible paper with real data`() = runTest {
         val lines = getFileContent("day4_input")
         val actualAccessiblePaper = with(log) {
             findNumberOfAccessiblePaper(lines, keepGoing = true)
@@ -44,7 +44,7 @@ class Day4Test {
     }
 
     private companion object {
-         val SAMPLE_INPUT = listOf<String>(
+        val SAMPLE_INPUT = listOf<String>(
             "..@@.@@@@.",
             "@@@.@.@.@@",
             "@@@@@.@.@@",

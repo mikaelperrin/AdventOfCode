@@ -23,7 +23,7 @@ object Day4 {
     private const val PAPER_ROLL = '@'
 
     context(log: Log)
-    fun findNumberOfAccessiblePaper(lines: List<String>, keepGoing: Boolean = false): Int  {
+    fun findNumberOfAccessiblePaper(lines: List<String>, keepGoing: Boolean = false): Int {
         val paperRollMap = lines.map { row ->
             row.toCharArray()
         }.toTypedArray()
@@ -97,7 +97,7 @@ object Day4 {
         for (i in paperRollMap.indices) {
             for (j in paperRollMap[i].indices) {
                 if (paperRollMap[i][j] == PAPER_ROLL) {
-                    val currentLocation = Point(i,j)
+                    val currentLocation = Point(i, j)
                     val nbPaperRollsAround = paperRollMap.nbPaperRollAround(currentLocation)
                     if (nbPaperRollsAround < 4) {
                         pointList.add(currentLocation)
@@ -108,13 +108,13 @@ object Day4 {
         return pointList
     }
 
-    fun Array<CharArray>.nbPaperRollAround(point: Point) : Int {
+    fun Array<CharArray>.nbPaperRollAround(point: Point): Int {
         var count = 0
         val i = point.x
         val j = point.y
-        val xRange = (i - 1).coerceAtLeast(0)..(i + 1).coerceAtMost(size-1)
+        val xRange = (i - 1).coerceAtLeast(0)..(i + 1).coerceAtMost(size - 1)
         //let's assume row size does not change for performance
-        val yRange = (j - 1).coerceAtLeast(0)..(j + 1).coerceAtMost(this[0].size-1)
+        val yRange = (j - 1).coerceAtLeast(0)..(j + 1).coerceAtMost(this[0].size - 1)
         for (x in xRange) {
             for (y in yRange) {
                 if ((x != i || y != j) && this[x][y] == PAPER_ROLL) {
@@ -199,7 +199,7 @@ object Day4 {
             .chunked(chunkSize)
             .flatMapMerge { rowIndices ->
                 flow {
-                    for (i in rowIndices){
+                    for (i in rowIndices) {
                         for (j in paperRollMap[i].indices) {
                             if (paperRollMap[i][j] != PAPER_ROLL) continue
 
